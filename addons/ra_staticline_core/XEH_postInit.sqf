@@ -5,43 +5,61 @@ RA_validAircraft = [
 
 ["ace_interact_menu_loaded", {
     params ["_unit"];
+
     if (!local _unit) exitWith {};
 
+    // Main category
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Static Line", "\ra_staticline_core\ui\UI_StaticLine.paa"]] call ace_interact_menu_fnc_addActionToObject;
 
+    // STAND UP
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Stand Up", "", {
-        params ["_player"]; ["stand", _player] call RA_fnc_stanceControl;
+        params ["_player"];
+        ["stand", _player] call RA_fnc_stanceControl;
     }, {
-        params ["_player"]; !("check" call {[_player] call RA_fnc_stanceControl})
+        params ["_player"];
+        !(["check", _player] call RA_fnc_stanceControl)
     }]] call ace_interact_menu_fnc_addActionToObject;
 
+    // SIT DOWN
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Sit Down", "", {
-        params ["_player"]; ["sit", _player] call RA_fnc_stanceControl;
+        params ["_player"];
+        ["sit", _player] call RA_fnc_stanceControl;
     }, {
         params ["_player"];
-        ([_player] call RA_fnc_stanceControl) && !([_player] call RA_fnc_hookControl)
+        (["check", _player] call RA_fnc_stanceControl) &&
+        !(["check", _player] call RA_fnc_hookControl)
     }]] call ace_interact_menu_fnc_addActionToObject;
 
+    // HOOK UP
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Hook Up", "\ra_staticline_core\ui\UI_Hook.paa", {
-        params ["_player"]; ["hook", _player, vehicle _player] call RA_fnc_hookControl;
+        params ["_player"];
+        ["hook", _player, vehicle _player] call RA_fnc_hookControl;
     }, {
         params ["_player"];
-        ([_player] call RA_fnc_stanceControl) && !( [_player] call RA_fnc_hookControl ) && (vehicle _player != _player)
+        (["check", _player] call RA_fnc_stanceControl) &&
+        !(["check", _player] call RA_fnc_hookControl) &&
+        (vehicle _player != _player)
     }]] call ace_interact_menu_fnc_addActionToObject;
 
+    // UNHOOK
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Unhook", "\ra_staticline_core\ui\UI_Unhook.paa", {
-        params ["_player"]; ["unhook", _player, vehicle _player] call RA_fnc_hookControl;
+        params ["_player"];
+        ["unhook", _player, vehicle _player] call RA_fnc_hookControl;
     }, {
-        params ["_player"]; [_player] call RA_fnc_hookControl
+        params ["_player"];
+        ["check", _player] call RA_fnc_hookControl
     }]] call ace_interact_menu_fnc_addActionToObject;
 
+    // STATIC LINE JUMP
     ["ACE_SelfActions", _unit, ["RA_StaticLine", "Static Line Jump", "\ra_staticline_core\ui\UI_StaticLine.paa", {
-        params ["_player"]; [_player, vehicle _player] call RA_fnc_staticJump;
+        params ["_player"];
+        [_player, vehicle _player] call RA_fnc_staticJump;
     }, {
         params ["_player"];
         (vehicle _player != _player) &&
-        ([_player] call RA_fnc_hookControl) &&
-        ([_player] call RA_fnc_stanceControl) &&
+        (["check", _player] call RA_fnc_hookControl) &&
+        (["check", _player] call RA_fnc_stanceControl) &&
         ((getPosATL vehicle _player) select 2 > 100)
     }]] call ace_interact_menu_fnc_addActionToObject;
+
 }] call CBA_fnc_addEventHandler;

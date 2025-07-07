@@ -12,7 +12,7 @@
 
 [
     "RA_ChuteClass", "EDITBOX",
-    ["Custom Chute Classname", "Optional deployed chute classname. Leave empty for vanilla NonSteerable_Parachute_F."],
+    ["Custom Chute Classname", "Optional deployed chute classname. Leave empty for vanilla ACE_NonSteerable_Parachute_F."],
     ["Realistic Airborne", "Settings"],
     "", 1, {}, false
 ] call CBA_fnc_addSetting;
