@@ -16,15 +16,8 @@
 */
 
 params ["_mode", "_unit", ["_vehicle", objNull]];
-
 switch (_mode) do {
-    case "hook": {
-        _unit setVariable ["RA_UnitHooked", true, true];
-    };
-    case "unhook": {
-        _unit setVariable ["RA_UnitHooked", false, true];
-    };
-    case "check": {
-        _unit getVariable ["RA_UnitHooked", false]
-    };
+    case "hook":   { _unit setVariable ["RA_UnitHooked", true, true]; };
+    case "unhook": { _unit setVariable ["RA_UnitHooked", false, true]; };
+    case "check":  { _unit getVariable ["RA_UnitHooked", false]; };
 };

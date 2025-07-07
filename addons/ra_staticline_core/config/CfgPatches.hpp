@@ -4,7 +4,7 @@ class CfgPatches {
         requiredAddons[] = {"ace_main", "ace_interaction", "cba_settings"};
         units[] = {};
         weapons[] = {};
-        author = "Gaming Panthers";
+        author = "GamingPanthers";
         version = "1.0";
     };
 };

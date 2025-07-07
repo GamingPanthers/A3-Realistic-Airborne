@@ -10,6 +10,5 @@
 */
 
 params ["_vehicle"];
-
 private _valid = RA_validAircraft apply { toLower _x };
-toLower typeOf _vehicle in _valid
+toLower typeOf _vehicle in _valid;

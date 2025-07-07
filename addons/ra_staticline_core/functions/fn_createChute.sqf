@@ -16,26 +16,20 @@
 */
 
 params ["_unit", "_dir"];
-
-// Get chute class from settings or default
 private _chuteClass = missionNamespace getVariable ["RA_ChuteClass", ""];
 if (_chuteClass isEqualTo "") then {
     _chuteClass = "NonSteerable_Parachute_F";
 };
 
-// Spawn chute and set heading/velocity
 private _chute = createVehicle [_chuteClass, getPos _unit, [], 0, "CAN_COLLIDE"];
 _chute setDir (_dir - 180);
 _chute setVelocity (velocity _unit);
 
-// Move player into chute and assign reserve
 _unit assignAsDriver _chute;
 _unit moveInDriver _chute;
 
-// Add ACE reserve
 if (isClass (configFile >> "CfgVehicles" >> "ACE_NonSteerableReserveParachute")) then {
     _unit addBackpackGlobal "ACE_NonSteerableReserveParachute";
 };
 
-// Allow chute cutting with ACE interaction
 _chute setVariable ["ace_parachute_canCut", true, true];
