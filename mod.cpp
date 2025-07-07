@@ -1,0 +1,10 @@
+name = "Realistic Airborne";
+author = "Gaming Panthers";
+tooltip = "ACE Static Line Rewritten";
+tooltipOwned = "Realistic Airborne";
+overview = "Modern and realistic static line jump system for Arma 3.";
+actionName = "GitHub";
+action = "https://github.com/yourrepo/realistic_airborne";
+dlcColor[] = {0.13, 0.4, 0.6, 1};
+hideName = 0;
+hidePicture = 0;

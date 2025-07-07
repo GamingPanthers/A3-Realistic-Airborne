@@ -1,0 +1,64 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2025 Gaming Panthers
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+---
+
+### TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+---
+
+## 🧾 Attribution
+
+**Original Concept & Mod Inspiration:**
+- *Valice Studios*  
+  Creators of the original ACE Static Line mod, which inspired this rewrite
+
+**Rewritten and Modernized by:**
+- *Gaming Panthers (2025)*  
+  Author and maintainer of Realistic Airborne
+
+---
+
+## 🎓 Third-Party Dependencies & Credits
+
+This mod integrates with the following open-source Arma 3 frameworks:
+
+- **ACE3 (Advanced Combat Environment 3)**  
+  License: GNU General Public License v3.0  
+  Repository: https://github.com/acemod/ACE3
+
+- **CBA_A3 (Community Base Addons)**  
+  License: GNU General Public License v2.0  
+  Repository: https://github.com/CBATeam/CBA_A3
+
+These dependencies are **not redistributed** with this mod.  
+Users must obtain and install them separately.
+
+All trademarks, licenses, and content remain the property of their respective owners.
+
+---
+
+## Author
+
+**Mod Name:** Realistic Airborne  
+**Maintainer:** Gaming Panthers  
+**License:** GNU GPLv3  
+**Year:** 2025
