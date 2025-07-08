@@ -4,8 +4,8 @@
 
     Description:
         Used when a jumper does not have a valid parachute equipped.
-        Deploys either a custom class (CBA setting) or defaults to NonSteerable_Parachute_F.
-        Moves unit into chute and adds ACE reserve parachute.
+        Deploys either a custom class or defaults to NonSteerable_Parachute_F.
+        Automatically moves unit into the chute and adds ACE reserve parachute.
 
     Params:
         _unit (Object) — The jumper
@@ -16,6 +16,7 @@
 */
 
 params ["_unit", "_dir"];
+
 private _chuteClass = missionNamespace getVariable ["RA_ChuteClass", ""];
 if (_chuteClass isEqualTo "") then {
     _chuteClass = "NonSteerable_Parachute_F";
@@ -24,12 +25,7 @@ if (_chuteClass isEqualTo "") then {
 private _chute = createVehicle [_chuteClass, getPos _unit, [], 0, "CAN_COLLIDE"];
 _chute setDir (_dir - 180);
 _chute setVelocity (velocity _unit);
-
 _unit assignAsDriver _chute;
 _unit moveInDriver _chute;
-
-if (isClass (configFile >> "CfgVehicles" >> "ACE_NonSteerableReserveParachute")) then {
-    _unit addBackpackGlobal "ACE_NonSteerableReserveParachute";
-};
-
+_unit addBackpackGlobal "ACE_NonSteerableReserveParachute";
 _chute setVariable ["ace_parachute_canCut", true, true];
