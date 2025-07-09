@@ -11,7 +11,7 @@ dlcColor[] = {0.13, 0.4, 0.6, 1};
 hideName = 0;
 hidePicture = 0;
 
-logo = "data\logo_ca.paa";
+logo = "data\logo_w_ca.paa";
 logoOver = "data\logoOver_ca.paa";
 logoSmall = "data\logoSmall_ca.paa";
 
@@ -19,4 +19,4 @@ picture = "data\logoPreview_ca.paa";
 
 overviewText = "A complete ACE3-compatible static line jump system featuring realism, modularity, and future HALO/HAHO expansion.";
 overviewFootnote = "Created by GamingPanthers";
-overviewPicture = "data\logo_ca.paa";
+overviewPicture = "data\logo_w_ca.paa";
