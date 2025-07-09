@@ -44,6 +44,7 @@ RA_validAircraft = [
 // Helper: Check if player is in valid aircraft
 RA_fnc_canJump = {
     private _veh = vehicle player;
+    diag_log format ["[RA] canJump check: Vehicle = %1", typeOf _veh];
     (_veh != player) && {[_veh] call RA_fnc_isValidAircraft}
 };
 
