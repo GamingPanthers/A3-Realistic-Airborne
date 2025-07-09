@@ -1,6 +1,6 @@
 /*
     File: XEH_postInit.sqf
-    Description: Defines aircraft whitelist and helper functions.
+    Description: Registers ACE3 self-interaction menu for Realistic Airborne dynamically.
 */
 
 // Aircraft whitelist
@@ -41,11 +41,85 @@ RA_validAircraft = [
     "ADFRC_Merlin_HC3"              // ADFRC Merlin
 ];
 
-// Helper: Check if player is in valid aircraft
+if (!hasInterface) exitWith {};
+
+// Helper: Can the player jump?
 RA_fnc_canJump = {
     private _veh = vehicle player;
     diag_log format ["[RA] canJump check: Vehicle = %1", typeOf _veh];
     (_veh != player) && {[_veh] call RA_fnc_isValidAircraft}
 };
 
-["Realistic Airborne", "ACE interaction initialized with aircraft validation."] call BIS_fnc_log;
+// Add Static Line Root Menu
+["RA_StaticLine",
+    "ACE_SelfActions",
+    "Static Line",
+    {call RA_fnc_canJump},
+    {},
+    "
+a_staticline_core\ui\UI_StaticLine.paa"
+] call ace_interact_menu_fnc_addAction;
+
+// Stand Up
+["RA_Stand",
+    ["ACE_SelfActions", "RA_StaticLine"],
+    "Stand Up",
+    {
+        (call RA_fnc_canJump)
+        && !(["check", player] call RA_fnc_stanceControl)
+    },
+    {
+        ["stand", player] call RA_fnc_stanceControl;
+    },
+    "
+a_staticline_core\ui\UI_StandUp.paa"
+] call ace_interact_menu_fnc_addAction;
+
+// Sit Down
+["RA_Sit",
+    ["ACE_SelfActions", "RA_StaticLine"],
+    "Sit Down",
+    {
+        (call RA_fnc_canJump)
+        && (["check", player] call RA_fnc_stanceControl)
+        && !(["check", player] call RA_fnc_hookControl)
+    },
+    {
+        ["sit", player] call RA_fnc_stanceControl;
+    },
+    "
+a_staticline_core\ui\UI_SitDown.paa"
+] call ace_interact_menu_fnc_addAction;
+
+// Hook Up
+["RA_Hook",
+    ["ACE_SelfActions", "RA_StaticLine"],
+    "Hook Up",
+    {
+        (call RA_fnc_canJump)
+        && !(["check", player] call RA_fnc_hookControl)
+        && (["check", player] call RA_fnc_stanceControl)
+    },
+    {
+        ["hook", player, vehicle player] call RA_fnc_hookControl;
+    },
+    "
+a_staticline_core\ui\UI_Hook.paa"
+] call ace_interact_menu_fnc_addAction;
+
+// Unhook
+["RA_Unhook",
+    ["ACE_SelfActions", "RA_StaticLine"],
+    "Unhook",
+    {
+        (call RA_fnc_canJump)
+        && (["check", player] call RA_fnc_hookControl)
+    },
+    {
+        ["unhook", player, vehicle player] call RA_fnc_hookControl;
+    },
+    "
+a_staticline_core\ui\UI_Unhook.paa"
+] call ace_interact_menu_fnc_addAction;
+
+["Realistic Airborne", "ACE3 interactions initialized."] call BIS_fnc_log;
