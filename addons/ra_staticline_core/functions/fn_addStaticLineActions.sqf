@@ -1,71 +1,82 @@
 /*
     Function: RA_fnc_addStaticLineActions
-    Description: Returns child ACE actions under the "Static Line" menu.
-
-    Params:
-        _unit (Object): The player (caller)
-        _target (Object): Usually also the player (self-interaction)
-
-    Returns:
-        Array — ACE interaction children
+    Description: Registers ACE3 self-interaction menu for Realistic Airborne.
 */
+diag_log "[RA] fn_addStaticLineActions.sqf called";
 
-params ["_unit", "_target"];
+if (!hasInterface) exitWith {};
 
-diag_log format ["[RA] addStaticLineActions called for unit: %1", name _unit];
+[] spawn {
+    // Wait for player and ACE to be fully initialized
+    waitUntil {
+        !isNull player &&
+        { player == player } &&
+        { !isNil "ace_interact_menu_fnc_addAction" }
+    };
+    sleep 0.2;
 
-private _actions = [];
+    diag_log "[RA] Registering ACE interaction: Static Line menu.";
+    ["RA_StaticLine",
+        "ACE_SelfActions",
+        "Static Line",
+        { [player] call RA_fnc_canJump },
+        {},
+        "\ra_staticline_core\ui\UI_StaticLine.paa"
+    ] call ace_interact_menu_fnc_addAction;
 
-if (!["check", _unit] call RA_fnc_stanceControl) then {
-    diag_log "[RA] Adding 'Stand Up' option.";
-    _actions pushBack [
-        "RA_Stand",
+    ["RA_Stand",
+        ["ACE_SelfActions", "RA_StaticLine"],
         "Stand Up",
-        "\ra_staticline_core\ui\UI_StandUp.paa",
-        { ["stand", _unit] call RA_fnc_stanceControl },
-        { true }
-    ];
-};
+        {
+            ([player] call RA_fnc_canJump)
+            && !(["check", player] call RA_fnc_stanceControl)
+        },
+        {
+            ["stand", player] call RA_fnc_stanceControl;
+        },
+        "\ra_staticline_core\ui\UI_StandUp.paa"
+    ] call ace_interact_menu_fnc_addAction;
 
-if (
-    (["check", _unit] call RA_fnc_stanceControl) &&
-    !(["check", _unit] call RA_fnc_hookControl)
-) then {
-    diag_log "[RA] Adding 'Sit Down' option.";
-    _actions pushBack [
-        "RA_Sit",
+    ["RA_Sit",
+        ["ACE_SelfActions", "RA_StaticLine"],
         "Sit Down",
-        "\ra_staticline_core\ui\UI_SitDown.paa",
-        { ["sit", _unit] call RA_fnc_stanceControl },
-        { true }
-    ];
-};
+        {
+            ([player] call RA_fnc_canJump)
+            && (["check", player] call RA_fnc_stanceControl)
+            && !(["check", player] call RA_fnc_hookControl)
+        },
+        {
+            ["sit", player] call RA_fnc_stanceControl;
+        },
+        "\ra_staticline_core\ui\UI_SitDown.paa"
+    ] call ace_interact_menu_fnc_addAction;
 
-if (
-    (["check", _unit] call RA_fnc_stanceControl) &&
-    !(["check", _unit] call RA_fnc_hookControl)
-) then {
-    diag_log "[RA] Adding 'Hook Up' option.";
-    _actions pushBack [
-        "RA_Hook",
+    ["RA_Hook",
+        ["ACE_SelfActions", "RA_StaticLine"],
         "Hook Up",
-        "\ra_staticline_core\ui\UI_Hook.paa",
-        { ["hook", _unit, vehicle _unit] call RA_fnc_hookControl },
-        { true }
-    ];
-};
+        {
+            ([player] call RA_fnc_canJump)
+            && !(["check", player] call RA_fnc_hookControl)
+            && (["check", player] call RA_fnc_stanceControl)
+        },
+        {
+            ["hook", player, vehicle player] call RA_fnc_hookControl;
+        },
+        "\ra_staticline_core\ui\UI_Hook.paa"
+    ] call ace_interact_menu_fnc_addAction;
 
-if (["check", _unit] call RA_fnc_hookControl) then {
-    diag_log "[RA] Adding 'Unhook' option.";
-    _actions pushBack [
-        "RA_Unhook",
+    ["RA_Unhook",
+        ["ACE_SelfActions", "RA_StaticLine"],
         "Unhook",
-        "\ra_staticline_core\ui\UI_Unhook.paa",
-        { ["unhook", _unit, vehicle _unit] call RA_fnc_hookControl },
-        { true }
-    ];
+        {
+            ([player] call RA_fnc_canJump)
+            && (["check", player] call RA_fnc_hookControl)
+        },
+        {
+            ["unhook", player, vehicle player] call RA_fnc_hookControl;
+        },
+        "\ra_staticline_core\ui\UI_Unhook.paa"
+    ] call ace_interact_menu_fnc_addAction;
+
+    diag_log "[RA] All ACE self-interaction actions registered.";
 };
-
-diag_log format ["[RA] addStaticLineActions finished. %1 actions registered.", count _actions];
-
-_actions

@@ -8,20 +8,17 @@
     Returns:
         Boolean — true if in a valid aircraft
 */
-
 params ["_unit"];
+diag_log format ["[RA] Parachute equipped setting = %1", missionNamespace getVariable ["RA_StaticEquipped", true]];
 
 private _veh = vehicle _unit;
-private _vehType = typeOf _veh;
+diag_log format ["[RA] canJump check: Vehicle = %1", typeOf _veh];
 
-// Must be in vehicle (not on foot)
 if (_veh isEqualTo _unit) exitWith {
-    diag_log format ["[RA] canJump: %1 is on foot, cannot jump.", name _unit];
+    diag_log "[RA] canJump -> false (not in vehicle)";
     false
 };
 
-// Check if valid aircraft
-private _result = [_veh] call RA_fnc_isValidAircraft;
-diag_log format ["[RA] canJump: %1 in %2 -> %3", name _unit, _vehType, _result];
-
-_result
+private _valid = [_veh] call RA_fnc_isValidAircraft;
+diag_log format ["[RA] canJump -> %1", _valid];
+_valid
