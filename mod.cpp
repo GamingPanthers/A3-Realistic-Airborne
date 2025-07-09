@@ -1,6 +1,6 @@
 name = "Realistic Airborne";
 author = "GamingPanthers";
-tooltip = "ACE Static Line Rewritten";
+tooltip = "Realistic Airborne";
 tooltipOwned = "Realistic Airborne";
 overview = "Modern and realistic static line jump system for Arma 3.";
 
