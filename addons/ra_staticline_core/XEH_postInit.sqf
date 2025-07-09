@@ -40,8 +40,11 @@ RA_validAircraft = [
     "adf_c130j_australia",          // ADF C-130J
     "ADFRC_Merlin_HC3"              // ADFRC Merlin
 ];
+diag_log "[RA] Aircraft whitelist initialized.";
 
-if (!hasInterface) exitWith {};
+if (!hasInterface) exitWith {
+    diag_log "[RA] Exiting postInit on server (no interface).";
+};
 
 // Helper: Can the player jump?
 RA_fnc_canJump = {
@@ -50,17 +53,18 @@ RA_fnc_canJump = {
     (_veh != player) && {[_veh] call RA_fnc_isValidAircraft}
 };
 
-// Add Static Line Root Menu
+// Static Line Root Menu
+diag_log "[RA] Registering ACE interaction: Static Line menu.";
 ["RA_StaticLine",
     "ACE_SelfActions",
     "Static Line",
     {call RA_fnc_canJump},
     {},
-    "
-a_staticline_core\ui\UI_StaticLine.paa"
+    "\ra_staticline_core\ui\UI_StaticLine.paa"
 ] call ace_interact_menu_fnc_addAction;
 
 // Stand Up
+diag_log "[RA] Registering ACE interaction: Stand Up.";
 ["RA_Stand",
     ["ACE_SelfActions", "RA_StaticLine"],
     "Stand Up",
@@ -71,11 +75,11 @@ a_staticline_core\ui\UI_StaticLine.paa"
     {
         ["stand", player] call RA_fnc_stanceControl;
     },
-    "
-a_staticline_core\ui\UI_StandUp.paa"
+    "\ra_staticline_core\ui\UI_StandUp.paa"
 ] call ace_interact_menu_fnc_addAction;
 
 // Sit Down
+diag_log "[RA] Registering ACE interaction: Sit Down.";
 ["RA_Sit",
     ["ACE_SelfActions", "RA_StaticLine"],
     "Sit Down",
@@ -87,11 +91,11 @@ a_staticline_core\ui\UI_StandUp.paa"
     {
         ["sit", player] call RA_fnc_stanceControl;
     },
-    "
-a_staticline_core\ui\UI_SitDown.paa"
+    "\ra_staticline_core\ui\UI_SitDown.paa"
 ] call ace_interact_menu_fnc_addAction;
 
 // Hook Up
+diag_log "[RA] Registering ACE interaction: Hook Up.";
 ["RA_Hook",
     ["ACE_SelfActions", "RA_StaticLine"],
     "Hook Up",
@@ -103,11 +107,11 @@ a_staticline_core\ui\UI_SitDown.paa"
     {
         ["hook", player, vehicle player] call RA_fnc_hookControl;
     },
-    "
-a_staticline_core\ui\UI_Hook.paa"
+    "\ra_staticline_core\ui\UI_Hook.paa"
 ] call ace_interact_menu_fnc_addAction;
 
 // Unhook
+diag_log "[RA] Registering ACE interaction: Unhook.";
 ["RA_Unhook",
     ["ACE_SelfActions", "RA_StaticLine"],
     "Unhook",
@@ -118,8 +122,8 @@ a_staticline_core\ui\UI_Hook.paa"
     {
         ["unhook", player, vehicle player] call RA_fnc_hookControl;
     },
-    "
-a_staticline_core\ui\UI_Unhook.paa"
+    "\ra_staticline_core\ui\UI_Unhook.paa"
 ] call ace_interact_menu_fnc_addAction;
 
+diag_log "[RA] All ACE self-interaction actions registered.";
 ["Realistic Airborne", "ACE3 interactions initialized."] call BIS_fnc_log;

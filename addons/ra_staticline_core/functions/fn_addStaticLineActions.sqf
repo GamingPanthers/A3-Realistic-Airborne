@@ -12,9 +12,12 @@
 
 params ["_unit", "_target"];
 
+diag_log format ["[RA] addStaticLineActions called for unit: %1", name _unit];
+
 private _actions = [];
 
 if (!["check", _unit] call RA_fnc_stanceControl) then {
+    diag_log "[RA] Adding 'Stand Up' option.";
     _actions pushBack [
         "RA_Stand",
         "Stand Up",
@@ -28,6 +31,7 @@ if (
     (["check", _unit] call RA_fnc_stanceControl) &&
     !(["check", _unit] call RA_fnc_hookControl)
 ) then {
+    diag_log "[RA] Adding 'Sit Down' option.";
     _actions pushBack [
         "RA_Sit",
         "Sit Down",
@@ -41,6 +45,7 @@ if (
     (["check", _unit] call RA_fnc_stanceControl) &&
     !(["check", _unit] call RA_fnc_hookControl)
 ) then {
+    diag_log "[RA] Adding 'Hook Up' option.";
     _actions pushBack [
         "RA_Hook",
         "Hook Up",
@@ -51,6 +56,7 @@ if (
 };
 
 if (["check", _unit] call RA_fnc_hookControl) then {
+    diag_log "[RA] Adding 'Unhook' option.";
     _actions pushBack [
         "RA_Unhook",
         "Unhook",
@@ -59,5 +65,7 @@ if (["check", _unit] call RA_fnc_hookControl) then {
         { true }
     ];
 };
+
+diag_log format ["[RA] addStaticLineActions finished. %1 actions registered.", count _actions];
 
 _actions

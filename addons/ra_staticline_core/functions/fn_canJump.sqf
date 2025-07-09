@@ -12,9 +12,16 @@
 params ["_unit"];
 
 private _veh = vehicle _unit;
+private _vehType = typeOf _veh;
 
 // Must be in vehicle (not on foot)
-if (_veh isEqualTo _unit) exitWith { false };
+if (_veh isEqualTo _unit) exitWith {
+    diag_log format ["[RA] canJump: %1 is on foot, cannot jump.", name _unit];
+    false
+};
 
-// Must be valid aircraft
-[_veh] call RA_fnc_isValidAircraft
+// Check if valid aircraft
+private _result = [_veh] call RA_fnc_isValidAircraft;
+diag_log format ["[RA] canJump: %1 in %2 -> %3", name _unit, _vehType, _result];
+
+_result
