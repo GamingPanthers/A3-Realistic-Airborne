@@ -4,11 +4,11 @@ class CfgFunctions {
 
         class core {
             file = "\ra_staticline_core\functions";
+            class addStaticLineActions {};
+            class canJump {};
+            class isValidAircraft {};
             class stanceControl {};
             class hookControl {};
-            class createChute {};
-            class staticJump {};
-            class isValidAircraft {};
         };
     };
 };

@@ -18,8 +18,24 @@
 params ["_vehicle", "_unit"];
 
 private _parachutes = [
-    "vn_b_pack_t10_01","vn_b_pack_ba22_01","vn_b_pack_ba18_01",
-    "vn_i_pack_parachute_01","vn_o_pack_parachute_01"
+    // ACE3
+    "ACE_NonSteerableParachute", "ACE_ReserveParachute",
+
+    // Vanilla Arma 3
+    "B_Parachute",
+
+    // S.O.G Prairie Fire (CDLC)
+    "vn_b_pack_t10_01", "vn_b_pack_ba22_01", "vn_b_pack_ba18_01",
+    "vn_i_pack_parachute_01", "vn_o_pack_parachute_01",
+
+    // CUP (Common civil/WW2)
+    "CUP_B_CivPack_Winter", "CUP_B_USPack_Medic_ACU",
+
+    // RHS (Fallback to ACE parachutes)
+    // Note: RHS doesn't provide special chute class backpacks
+
+    // 3CB (uses vanilla or ACE)
+    "UK3CB_BAF_B_Pack_PARA_MTP", "UK3CB_BAF_B_Pack_PARA_MTP_Radio"
 ];
 
 private _backpack = unitBackpack _unit;

@@ -1,3 +1,9 @@
+/*
+    File: XEH_preInit.sqf
+    Description: Pre-initialization for Realistic Airborne CBA settings.
+*/
+
+// Require static parachute equipped (default: true for realism)
 [
     "RA_StaticEquipped",
     "CHECKBOX",
@@ -9,16 +15,7 @@
     true
 ] call CBA_fnc_addSetting;
 
-[
-    "RA_ChuteClass",
-    "EDITBOX",
-    ["Custom Chute Classname", "Optional deployed chute classname. Leave empty for vanilla NonSteerable_Parachute_F."],
-    ["Realistic Airborne", "Settings"],
-    "",
-    1,
-    {}
-] call CBA_fnc_addSetting;
-
+// Allow Night Vision Gear when reserve deployed (default: true)
 [
     "RA_NODsFriendly",
     "CHECKBOX",
@@ -28,4 +25,15 @@
     1,
     {},
     true
+] call CBA_fnc_addSetting;
+
+// Optional override for parachute class to spawn (default: ACE NonSteerable)
+[
+    "RA_ChuteClass",
+    "EDITBOX",
+    ["Custom Chute Classname", "Optional deployed chute classname. Leave empty for ACE_NonSteerableParachute."],
+    ["Realistic Airborne", "Settings"],
+    "ACE_NonSteerableParachute",
+    1,
+    {}
 ] call CBA_fnc_addSetting;

@@ -1,19 +1,12 @@
 class CfgVehicles {
-    class Plane_Base_F;
-    class YourPlane : Plane_Base_F {
-        class ACE_Actions {
-            class ACE_MainActions {
-                selection = "";
-                distance = 3;
-                condition = "true";
+    class CAManBase {
+        class ACE_SelfActions {
+            class RA_StaticLine {
+                displayName = "Static Line";
+                icon = "\ra_staticline_core\ui\UI_StaticLine.paa";
+                condition = "(_this call RA_fnc_canJump)";
                 statement = "";
-
-                class RA_StaticLineHook {
-                    displayName = "Hook Up Jumper";
-                    condition = "player in crew _target";
-                    statement = "['hook', player, _target] call RA_fnc_hookControl;";
-                    icon = "\ra_staticline_core\ui\UI_Hook.paa";
-                };
+                insertChildren = "_this call RA_fnc_addStaticLineActions";
             };
         };
     };
