@@ -8,6 +8,7 @@ class CfgFunctions {
             class hookControl {};
             class createChute {};
             class staticJump {};
+            class isValidAircraft {};
         };
     };
 };

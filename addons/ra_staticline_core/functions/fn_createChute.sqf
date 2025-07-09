@@ -18,14 +18,26 @@
 params ["_unit", "_dir"];
 
 private _chuteClass = missionNamespace getVariable ["RA_ChuteClass", ""];
+
 if (_chuteClass isEqualTo "") then {
     _chuteClass = "NonSteerable_Parachute_F";
+    diag_log "[RA] No custom chute set. Defaulting to NonSteerable_Parachute_F.";
+} else {
+    diag_log format ["[RA] Custom chute class used: %1", _chuteClass];
 };
 
-private _chute = createVehicle [_chuteClass, getPos _unit, [], 0, "CAN_COLLIDE"];
+private _chute = createVehicle [_chuteClass, getPosATL _unit, [], 0, "CAN_COLLIDE"];
 _chute setDir (_dir - 180);
 _chute setVelocity (velocity _unit);
+
 _unit assignAsDriver _chute;
 _unit moveInDriver _chute;
-_unit addBackpackGlobal "ACE_NonSteerableReserveParachute";
+
+// Add reserve parachute (ACE)
+if !(backpack _unit isEqualTo "ACE_NonSteerableReserveParachute") then {
+    _unit addBackpackGlobal "ACE_NonSteerableReserveParachute";
+    diag_log format ["[RA] Reserve parachute added to: %1", name _unit];
+};
+
 _chute setVariable ["ace_parachute_canCut", true, true];
+diag_log format ["[RA] Parachute deployed for %1 using class %2", name _unit, _chuteClass];
