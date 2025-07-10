@@ -2,19 +2,22 @@
     Function: RA_fnc_addStaticLineActions
     Description: Registers ACE3 self-interaction menu for Realistic Airborne.
 */
-diag_log "[RA] fn_addStaticLineActions.sqf called";
 
-if (!hasInterface) exitWith {};
+if (!hasInterface) exitWith {
+    diag_log "[RA] Exiting fn_addStaticLineActions — no interface";
+};
+
 
 [] spawn {
-    // Wait for player and ACE to be fully initialized
     waitUntil {
         !isNull player &&
         { player == player } &&
         { !isNil "ace_interact_menu_fnc_addAction" }
     };
-    sleep 0.2;
 
+    diag_log "[RA] ACE interaction functions available. Proceeding.";
+
+    // STATIC LINE MENU
     diag_log "[RA] Registering ACE interaction: Static Line menu.";
     ["RA_StaticLine",
         "ACE_SelfActions",
@@ -24,6 +27,8 @@ if (!hasInterface) exitWith {};
         "\ra_staticline_core\ui\UI_StaticLine.paa"
     ] call ace_interact_menu_fnc_addAction;
 
+    // STAND UP
+    diag_log "[RA] Registering ACE interaction: Stand Up.";
     ["RA_Stand",
         ["ACE_SelfActions", "RA_StaticLine"],
         "Stand Up",
@@ -37,6 +42,8 @@ if (!hasInterface) exitWith {};
         "\ra_staticline_core\ui\UI_StandUp.paa"
     ] call ace_interact_menu_fnc_addAction;
 
+    // SIT DOWN
+    diag_log "[RA] Registering ACE interaction: Sit Down.";
     ["RA_Sit",
         ["ACE_SelfActions", "RA_StaticLine"],
         "Sit Down",
@@ -51,6 +58,8 @@ if (!hasInterface) exitWith {};
         "\ra_staticline_core\ui\UI_SitDown.paa"
     ] call ace_interact_menu_fnc_addAction;
 
+    // HOOK UP
+    diag_log "[RA] Registering ACE interaction: Hook Up.";
     ["RA_Hook",
         ["ACE_SelfActions", "RA_StaticLine"],
         "Hook Up",
@@ -65,6 +74,8 @@ if (!hasInterface) exitWith {};
         "\ra_staticline_core\ui\UI_Hook.paa"
     ] call ace_interact_menu_fnc_addAction;
 
+    // UNHOOK
+    diag_log "[RA] Registering ACE interaction: Unhook.";
     ["RA_Unhook",
         ["ACE_SelfActions", "RA_StaticLine"],
         "Unhook",

@@ -26,5 +26,8 @@ RA_validAircraft = [
 diag_log "[RA] Aircraft whitelist initialized.";
 
 // Call the ACE action registration
-[] call RA_fnc_addStaticLineActions;
+["ace_interact_menu_ready", {
+    diag_log "[RA] ace_interact_menu_ready triggered";
+    [] call RA_fnc_addStaticLineActions;
+}] call CBA_fnc_addEventHandler;
 
