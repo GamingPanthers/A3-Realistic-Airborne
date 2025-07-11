@@ -32,7 +32,8 @@ switch (_mode) do {
         // Visual feedback - force standing animation if possible
         if (vehicle _unit != _unit) then {
             // In vehicle - limited animation options
-            _unit switchMove "passenger_genric01_leanright"; //looks alert/ready while seated.
+            _unit action ["SitDown", vehicle _unit];
+            _unit switchMove "passenger_genric01_leanright"; //stands up.
         } else {
             // On foot - full animation control
             _unit playMove "AmovPercMstpSnonWnonDnon";
