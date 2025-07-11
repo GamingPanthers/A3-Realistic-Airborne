@@ -2,7 +2,6 @@
 #include "config\CfgFunctions.hpp"
 #include "config\CfgVehicles.hpp"
 #include "config\CfgEventHandlers.hpp"
-#include "config\CfgRA.hpp"
 
 // Patches Config
 class CfgPatches {
@@ -21,12 +20,12 @@ class CfgPatches {
             "A3_Air_F_Heli",
             "A3_Air_F_Beta",
             
-            // ACE3 Core (optional but recommended)
+            // ACE3 Core
             "ace_main",
             "ace_common",
             "ace_parachute",
             
-            // CBA (if using CBA events)
+            // CBA
             "cba_main",
             "cba_events"
         };

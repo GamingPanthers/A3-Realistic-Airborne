@@ -1,18 +1,16 @@
 /*
- * Author: GamingPanthers
- * Executes a static line jump sequence from an aircraft with ACE3 compatibility
- *
- * Arguments:
- * 0: Vehicle <OBJECT> - The aircraft the jumper is exiting
- * 1: Unit <OBJECT> - The jumper
- *
- * Return Value:
- * None
- *
- * Example:
- * [vehicle player, player] call RA_fnc_staticJump;
- *
- * Public: No
+    Author: GamingPanthers
+    Executes a static line jump sequence from an aircraft with ACE3 compatibility
+
+    Arguments:
+    0: Vehicle <OBJECT> - The aircraft the jumper is exiting
+    1: Unit <OBJECT> - The jumper
+
+    Return Value:
+    None
+
+    Example:
+    [vehicle player, player] call RA_fnc_staticJump;
  */
 
 params [

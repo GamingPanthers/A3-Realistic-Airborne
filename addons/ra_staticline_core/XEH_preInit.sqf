@@ -24,15 +24,12 @@ RA_validAircraft = [
     
     // VTOL Aircraft
     "B_T_VTOL_01_infantry_F",          // V-44 X Blackfish (Infantry Transport)
-    "B_T_VTOL_01_vehicle_F",           // V-44 X Blackfish (Vehicle Transport)
     "O_T_VTOL_02_infantry_F",          // Y-32 Xi'an (Infantry Transport)
-    "O_T_VTOL_02_vehicle_F",           // Y-32 Xi'an (Vehicle Transport)
     
-    // Light Transport
-    "I_Heli_light_03_unarmed_F",       // WY-55 Hellion (Unarmed)
-    "B_Heli_Light_01_F",               // MH-9 Hummingbird
-    "O_Heli_Light_02_unarmed_F",       // PO-30 Orca (Unarmed)
-    
+    // === ADFRC VEHICLES ===
+    "adfrc_c130_inf",                  // C-130 Hercules
+    "adfrc_chinook",                   // Chinook
+
     // === CUP VEHICLES ===
     // C-130 Hercules
     "CUP_B_C130J_GB",                  // C-130J Super Hercules (BAF)
@@ -72,13 +69,6 @@ RA_validAircraft = [
     "RHS_UH60M_MEV2",                  // UH-60M MEDEVAC (Alternative)
     "rhsusf_uh60m_mev",                // UH-60M MEV
     "rhsusf_uh60m_mev2",               // UH-60M MEV2
-    
-    // UH-1 Huey
-    "RHS_UH1Y",                        // UH-1Y Venom
-    "RHS_UH1Y_UNARMED",               // UH-1Y Venom (Unarmed)
-    "RHS_UH1Y_MEV",                   // UH-1Y Venom (MEDEVAC)
-    "rhsusf_uh1y_unarmed",            // UH-1Y Unarmed
-    "rhsusf_uh1y_unarmed_d",          // UH-1Y Unarmed (Desert)
     
     // === 3CB BAF ===
     // Merlin
