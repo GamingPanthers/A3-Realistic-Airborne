@@ -16,8 +16,8 @@ if (!hasInterface) exitWith {
     waitUntil {
         sleep 0.1;
         (!isNull player && 
-         {player == player} && 
-         {!isNil "ace_interact_menu_fnc_createAction"}) ||
+            {player == player} && 
+            {!isNil "ace_interact_menu_fnc_createAction"}) ||
         (time > _timeout)
     };
     
