@@ -86,12 +86,13 @@ switch (_mode) do {
             _unit switchMove "passenger_generic01_leanright";
             
             // Add slight delay for realism, then set final standing position
-            [{
+            [_unit] spawn {
                 params ["_unit"];
+                sleep 1.5;
                 if (alive _unit && _unit getVariable ["RA_UnitStanding", false]) then {
                     _unit switchMove "passenger_generic01_foldhands"; // Final standing position
                 };
-            }, [_unit], 1.5] call CBA_fnc_waitAndExecute;
+            };
             
         } else {
             // On foot - standing animation sequence
@@ -99,12 +100,13 @@ switch (_mode) do {
             _unit playMove "AmovPsitMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon";
             
             // Set final standing position after animation completes
-            [{
+            [_unit] spawn {
                 params ["_unit"];
+                sleep 2.0;
                 if (alive _unit && _unit getVariable ["RA_UnitStanding", false]) then {
                     _unit switchMove "AmovPercMstpSnonWnonDnon";
                 };
-            }, [_unit], 2.0] call CBA_fnc_waitAndExecute;
+            };
         };
         
         // Add visual indicator
@@ -133,8 +135,9 @@ switch (_mode) do {
             _unit switchMove "passenger_generic01_leanright"; // Intermediate position
             
             // Then return to original sitting position
-            [{
+            [_unit, _originalSittingAnim] spawn {
                 params ["_unit", "_originalAnim"];
+                sleep 1.0;
                 if (alive _unit && !(_unit getVariable ["RA_UnitStanding", false])) then {
                     if (_originalAnim != "") then {
                         _unit switchMove _originalAnim;
@@ -142,7 +145,7 @@ switch (_mode) do {
                         _unit switchMove ""; // Default passenger animation
                     };
                 };
-            }, [_unit, _originalSittingAnim], 1.0] call CBA_fnc_waitAndExecute;
+            };
             
         } else {
             // On foot - sitting down animation sequence
@@ -150,8 +153,9 @@ switch (_mode) do {
             _unit playMove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon";
             
             // Set final sitting position (original position)
-            [{
+            [_unit, _originalSittingAnim] spawn {
                 params ["_unit", "_originalAnim"];
+                sleep 2.0;
                 if (alive _unit && !(_unit getVariable ["RA_UnitStanding", false])) then {
                     if (_originalAnim != "") then {
                         _unit switchMove _originalAnim;
@@ -159,7 +163,7 @@ switch (_mode) do {
                         _unit switchMove "AmovPsitMstpSnonWnonDnon"; // Default sitting
                     };
                 };
-            }, [_unit, _originalSittingAnim], 2.0] call CBA_fnc_waitAndExecute;
+            };
         };
         
         // Add visual indicator
