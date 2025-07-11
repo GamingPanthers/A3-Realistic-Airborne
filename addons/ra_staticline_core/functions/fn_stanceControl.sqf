@@ -32,7 +32,7 @@ switch (_mode) do {
         // Visual feedback - force standing animation if possible
         if (vehicle _unit != _unit) then {
             // In vehicle - limited animation options
-            _unit switchMove "passenger_genric01_leanright"; //stands up.
+            _unit switchMove "passenger_generic01_leanright"; //stands up.
         } else {
             // On foot - full animation control
             _unit playMove "AmovPercMstpSnonWnonDnon";
@@ -51,7 +51,8 @@ switch (_mode) do {
         // Visual feedback - force sitting animation if possible
         if (vehicle _unit != _unit) then {
             // In vehicle - use vehicle-specific sitting
-            _unit switchMove "";
+            //_unit switchMove "passenger_generic01_foldhands"; // passenger sitdown with folded hands
+            _unit switchMove ""; // revert back to normal passenger animation
         } else {
             // On foot - sitting animation
             _unit playMove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon";
