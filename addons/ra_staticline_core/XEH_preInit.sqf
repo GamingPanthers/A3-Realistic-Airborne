@@ -1,9 +1,6 @@
 /*
     Extended Event Handler: PreInit
     Description: Initializes Realistic Airborne mod before mission start
-    
-    This file should be placed in your addon folder as XEH_preInit.sqf
-    It will be automatically executed by CBA Extended Event Handlers
 */
 
 // Mod identification
@@ -107,6 +104,10 @@ RA_validAircraft = [
     "gm_gc_air_mi2urn",                // Mi-2URP Hoplite
     "gm_pl_air_mi2p",                  // Mi-2P Hoplite (Poland)
     "gm_pl_air_mi2t",                  // Mi-2T Hoplite (Poland)
+
+    // === USAF Mod ====
+    "USAF_C17",                        // C-17 Globemaster III
+    "USAF_C130J",                      // C-130J Super Hercules
     
     // === CUSTOM/MODDED AIRCRAFT ===
     // Add your custom aircraft classnames here
@@ -115,6 +116,7 @@ RA_validAircraft = [
     // === FALLBACK CLASSES ===
     // These are broad categories - use with caution as they may include combat aircraft
     "Helicopter_Base_H",               // Base helicopter class (very broad)
+    "Plane_Base_F",                    // Base plane class (very broad)
     "VTOL_Base_F"                      // Base VTOL class (very broad)
 ];
 
