@@ -3,7 +3,7 @@
     Description: Executes a static line jump sequence from an aircraft with ACE3 compatibility
 
     Author: GamingPanthers
-    Version: 1.0.1
+    Version: 1.0.2
 
     Arguments:
     0: Vehicle <OBJECT> - The aircraft the jumper is exiting
@@ -68,19 +68,28 @@ private _parachuteRequired = missionNamespace getVariable ["RA_StaticEquipped", 
 
 // Validate parachute requirement
 if (_parachuteRequired && !_hasValidParachute) exitWith {
-    // Use ACE3 hint system if available
-    private _message = localize "STR_RA_NoParachute"; // "You must have a static parachute equipped to jump."
+    // FIXED: Use proper hint/display methods
+    private _message = "You must have a static parachute equipped to jump.";
     
-    if (hasInterface && _unit == ACE_player) then {
+    // Try to use localization if available
+    private _localizedMessage = localize "STR_RA_NoParachute";
+    if (_localizedMessage != "STR_RA_NoParachute") then {
+        _message = _localizedMessage;
+    };
+    
+    if (hasInterface && _unit == player) then {
+        // FIXED: Use proper ACE hint method or fallback to regular hint
         if (isClass (configFile >> "CfgPatches" >> "ace_common")) then {
-            [_message, 2] call ace_common_fnc_displayText;
+            // Use ACE's hint system with correct parameters
+            [_message] call ace_common_fnc_displayTextStructured;
         } else {
+            // Fallback to regular hint
             hint _message;
         };
     };
     
     // Play feedback sound
-    if (hasInterface && _unit == ACE_player) then {
+    if (hasInterface && _unit == player) then {
         playSound "FD_Start_F";
     };
     
@@ -165,7 +174,9 @@ diag_log format ["[RA] Static jump initiated: %1 from %2 at %3m", name _unit, ty
     };
     
     // Fire event for other systems
-    ["RA_staticJumpCompleted", [_unit, _vehicle]] call CBA_fnc_globalEvent;
+    if (!isNil "CBA_fnc_globalEvent") then {
+        ["RA_staticJumpCompleted", [_unit, _vehicle]] call CBA_fnc_globalEvent;
+    };
     
     diag_log format ["[RA] Static jump completed for %1", name _unit];
 };
