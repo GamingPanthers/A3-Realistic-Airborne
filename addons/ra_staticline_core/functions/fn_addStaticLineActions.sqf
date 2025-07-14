@@ -3,7 +3,7 @@
     Description: Registers ACE3 self-interaction menu for Realistic Airborne.
     
     Author: GamingPanthers
-    Version: 1.1
+    Version: 1.0.2
 */
 
 if (!hasInterface) exitWith {
@@ -39,7 +39,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions"], _staticLineAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // STAND UP ACTION
+    // STAND UP ACTION - FIXED
     diag_log "[RA] Registering ACE interaction: Stand Up.";
     private _standUpAction = [
         "RA_Stand",                                         // Action ID
@@ -48,7 +48,8 @@ if (!hasInterface) exitWith {
         {                                                   // Code
             ["stand", player] call RA_fnc_stanceControl;
             playSound "RA_StandUp";
-            [player, "Standing up and ready!"] remoteExec ["hintSilent", player];
+            // FIXED: Use proper hint syntax
+            hintSilent "Standing up and ready!";
             diag_log format ["[RA] Player %1 stood up", name player];
         },
         {                                                   // Condition
@@ -59,7 +60,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _standUpAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // SIT DOWN ACTION
+    // SIT DOWN ACTION - FIXED
     diag_log "[RA] Registering ACE interaction: Sit Down.";
     private _sitDownAction = [
         "RA_Sit",                                           // Action ID
@@ -71,7 +72,8 @@ if (!hasInterface) exitWith {
             if (["check", player] call RA_fnc_hookControl) then {
                 ["unhook", player, vehicle player] call RA_fnc_hookControl;
             };
-            [player, "Sitting down and relaxing."] remoteExec ["hintSilent", player];
+            // FIXED: Use proper hint syntax
+            hintSilent "Sitting down and relaxing.";
             diag_log format ["[RA] Player %1 sat down", name player];
         },
         {                                                   // Condition
@@ -82,7 +84,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _sitDownAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // HOOK UP ACTION
+    // HOOK UP ACTION - FIXED
     diag_log "[RA] Registering ACE interaction: Hook Up.";
     private _hookUpAction = [
         "RA_Hook",                                          // Action ID
@@ -91,7 +93,8 @@ if (!hasInterface) exitWith {
         {                                                   // Code
             ["hook", player, vehicle player] call RA_fnc_hookControl;
             playSound "RA_HookUp";
-            [player, "Hooked up and ready to jump!"] remoteExec ["hintSilent", player];
+            // FIXED: Use proper hint syntax
+            hintSilent "Hooked up and ready to jump!";
             diag_log format ["[RA] Player %1 hooked up", name player];
         },
         {                                                   // Condition
@@ -103,7 +106,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _hookUpAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // UNHOOK ACTION
+    // UNHOOK ACTION - FIXED
     diag_log "[RA] Registering ACE interaction: Unhook.";
     private _unhookAction = [
         "RA_Unhook",                                        // Action ID
@@ -111,7 +114,8 @@ if (!hasInterface) exitWith {
         "\ra_staticline_core\ui\UI_Unhook.paa",            // Icon
         {                                                   // Code
             ["unhook", player, vehicle player] call RA_fnc_hookControl;
-            [player, "Unhooked and secured."] remoteExec ["hintSilent", player];
+            // FIXED: Use proper hint syntax
+            hintSilent "Unhooked and secured.";
             diag_log format ["[RA] Player %1 unhooked", name player];
         },
         {                                                   // Condition

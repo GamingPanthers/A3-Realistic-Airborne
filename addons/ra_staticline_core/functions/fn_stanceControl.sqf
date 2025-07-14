@@ -3,7 +3,7 @@
     Description: Handles stance logic for static line jumpers with animation memory.
     
     Author: GamingPanthers
-    Version: 1.2
+    Version: 1.0.1
 
     Modes:
         "stand" — sets player standing true with stand-up animation

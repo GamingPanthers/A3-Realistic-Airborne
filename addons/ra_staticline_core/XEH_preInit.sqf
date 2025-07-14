@@ -1,6 +1,9 @@
 /*
-    Extended Event Handler: PreInit
+    Function: Extended Event Handler: PreInit
     Description: Initializes Realistic Airborne mod before mission start
+
+    Author: GamingPanthers
+    Version: 1.0.1
 */
 
 // Mod identification

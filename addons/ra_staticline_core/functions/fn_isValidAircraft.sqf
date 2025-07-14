@@ -3,7 +3,7 @@
     Description: Checks if vehicle is a valid aircraft for static line jumping.
     
     Author: GamingPanthers
-    Version: 1.1
+    Version: 1.0.1
 
     Params:
         _vehicle (Object) — Vehicle to check

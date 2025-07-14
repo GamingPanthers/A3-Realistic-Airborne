@@ -3,7 +3,7 @@
     Description: Spawns a parachute and moves the jumper into it.
     
     Author: GamingPanthers
-    Version: 1.1
+    Version: 1.0.2
     
     Used when a jumper does not have a valid parachute equipped.
     Deploys either a custom class or defaults to NonSteerable_Parachute_F.
@@ -76,8 +76,9 @@ _chute addEventHandler ["GetOut", {
         // Play landing sound
         playSound "RA_Landing";
         
-        // Show landing message
-        [_unit, format ["Successful landing! Altitude: %1m", round ((getPosATL _unit) select 2)]] remoteExec ["hintSilent", _unit];
+        // FIXED: Use proper hint syntax
+        private _message = format ["Successful landing! Altitude: %1m", round ((getPosATL _unit) select 2)];
+        hintSilent _message;
         
         // Remove auto-added reserve parachute
         if (backpack _unit in ["ACE_NonSteerableReserveParachute", "ACE_ReserveParachute"]) then {

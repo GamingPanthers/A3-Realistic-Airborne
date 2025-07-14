@@ -1,6 +1,9 @@
 /*
+    Function: RA_fnc_staticJump
+    Description: Executes a static line jump sequence from an aircraft with ACE3 compatibility
+
     Author: GamingPanthers
-    Executes a static line jump sequence from an aircraft with ACE3 compatibility
+    Version: 1.0.1
 
     Arguments:
     0: Vehicle <OBJECT> - The aircraft the jumper is exiting

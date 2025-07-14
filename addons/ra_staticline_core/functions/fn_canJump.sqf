@@ -3,7 +3,7 @@
     Description: Returns true if the player is inside a valid aircraft at sufficient altitude.
     
     Author: GamingPanthers
-    Version: 1.1
+    Version: 1.0.1
     
     Params:
         _unit (Object): The unit (usually player)

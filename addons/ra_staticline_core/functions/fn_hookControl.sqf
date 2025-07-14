@@ -3,7 +3,7 @@
     Description: Manages hook state and jump action for static line.
     
     Author: GamingPanthers
-    Version: 1.1
+    Version: 1.0.1
 
     Modes:
         "hook" — set hooked true, add jump action
