@@ -39,7 +39,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions"], _staticLineAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // STAND UP ACTION - FIXED
+    // STAND UP ACTION
     diag_log "[RA] Registering ACE interaction: Stand Up.";
     private _standUpAction = [
         "RA_Stand",                                         // Action ID
@@ -48,7 +48,6 @@ if (!hasInterface) exitWith {
         {                                                   // Code
             ["stand", player] call RA_fnc_stanceControl;
             playSound "RA_StandUp";
-            // FIXED: Use proper hint syntax
             hintSilent "Standing up and ready!";
             diag_log format ["[RA] Player %1 stood up", name player];
         },
@@ -60,7 +59,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _standUpAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // SIT DOWN ACTION - FIXED
+    // SIT DOWN ACTION
     diag_log "[RA] Registering ACE interaction: Sit Down.";
     private _sitDownAction = [
         "RA_Sit",                                           // Action ID
@@ -72,7 +71,6 @@ if (!hasInterface) exitWith {
             if (["check", player] call RA_fnc_hookControl) then {
                 ["unhook", player, vehicle player] call RA_fnc_hookControl;
             };
-            // FIXED: Use proper hint syntax
             hintSilent "Sitting down and relaxing.";
             diag_log format ["[RA] Player %1 sat down", name player];
         },
@@ -84,7 +82,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _sitDownAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // HOOK UP ACTION - FIXED
+    // HOOK UP ACTION
     diag_log "[RA] Registering ACE interaction: Hook Up.";
     private _hookUpAction = [
         "RA_Hook",                                          // Action ID
@@ -93,7 +91,6 @@ if (!hasInterface) exitWith {
         {                                                   // Code
             ["hook", player, vehicle player] call RA_fnc_hookControl;
             playSound "RA_HookUp";
-            // FIXED: Use proper hint syntax
             hintSilent "Hooked up and ready to jump!";
             diag_log format ["[RA] Player %1 hooked up", name player];
         },
@@ -106,7 +103,7 @@ if (!hasInterface) exitWith {
 
     [player, 1, ["ACE_SelfActions", "RA_StaticLine"], _hookUpAction] call ace_interact_menu_fnc_addActionToObject;
 
-    // UNHOOK ACTION - FIXED
+    // UNHOOK ACTION
     diag_log "[RA] Registering ACE interaction: Unhook.";
     private _unhookAction = [
         "RA_Unhook",                                        // Action ID
@@ -114,7 +111,6 @@ if (!hasInterface) exitWith {
         "\ra_staticline_core\ui\UI_Unhook.paa",            // Icon
         {                                                   // Code
             ["unhook", player, vehicle player] call RA_fnc_hookControl;
-            // FIXED: Use proper hint syntax
             hintSilent "Unhooked and secured.";
             diag_log format ["[RA] Player %1 unhooked", name player];
         },

@@ -68,22 +68,18 @@ private _parachuteRequired = missionNamespace getVariable ["RA_StaticEquipped", 
 
 // Validate parachute requirement
 if (_parachuteRequired && !_hasValidParachute) exitWith {
-    // FIXED: Use proper hint/display methods
     private _message = "You must have a static parachute equipped to jump.";
     
-    // Try to use localization if available
+    // Use localization if available
     private _localizedMessage = localize "STR_RA_NoParachute";
     if (_localizedMessage != "STR_RA_NoParachute") then {
         _message = _localizedMessage;
     };
     
     if (hasInterface && _unit == player) then {
-        // FIXED: Use proper ACE hint method or fallback to regular hint
         if (isClass (configFile >> "CfgPatches" >> "ace_common")) then {
-            // Use ACE's hint system with correct parameters
             [_message] call ace_common_fnc_displayTextStructured;
         } else {
-            // Fallback to regular hint
             hint _message;
         };
     };
