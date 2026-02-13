@@ -1,5 +1,5 @@
 name = "Realistic Airborne"
-prefix = "ra_core"
+prefix = "ra"
 mainprefix = "z"
 author = "GamingPanthers"
 [version]

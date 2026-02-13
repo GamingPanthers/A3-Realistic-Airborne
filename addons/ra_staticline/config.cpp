@@ -4,7 +4,7 @@ class CfgPatches {
         author = "GamingPanthers";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 0.1;
+        requiredVersion = 2.14;
         requiredAddons[] = {"ra_core"};
     };
 };

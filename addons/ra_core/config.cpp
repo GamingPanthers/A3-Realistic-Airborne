@@ -7,7 +7,7 @@ class CfgPatches {
         author = "GamingPanthers";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 2.00;
+        requiredVersion = 2.14;
         requiredAddons[] = {
             // Core Arma 3
             "A3_Functions_F",

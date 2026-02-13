@@ -1,9 +1,18 @@
+127||127||9||31||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "not in vehicle" check||/addons/ra_staticline/functions/fn_staticJump.sqf
+143||143||13||35||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "in vehicle" check||/addons/ra_staticline/functions/fn_staticJump.sqf
 80||80||39||85||warning||Use configOf instead of typeOf with configFile for variable `_vehicle`||use configOf||/addons/ra_staticline/functions/fn_isValidAircraft.sqf
+47||47||10||47||warning||File Missing||missing||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+67||67||10||47||warning||File Missing||missing||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+130||130||10||45||warning||File Missing||missing||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+146||146||10||44||warning||File Missing||missing||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
 48||48||13||35||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "in vehicle" check||/addons/ra_staticline/functions/fn_stanceControl.sqf
 81||81||13||35||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "in vehicle" check||/addons/ra_staticline/functions/fn_stanceControl.sqf
 131||131||13||35||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "in vehicle" check||/addons/ra_staticline/functions/fn_stanceControl.sqf
 196||196||27||115||warning||assignment to if can be replaced with select||use select||/addons/ra_staticline/functions/fn_stanceControl.sqf
-127||127||9||31||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "not in vehicle" check||/addons/ra_staticline/functions/fn_staticJump.sqf
-143||143||13||35||warning||Using `vehicle` to check if a unit is in a vehicle is inefficient||inefficient "in vehicle" check||/addons/ra_staticline/functions/fn_staticJump.sqf
-19||19||24||30||error||command `player` requires version 0.50||requires version 0.50||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
-36||36||5||12||error||command `objNull` requires version 0.50||requires version 0.50||/addons/ra_staticline/functions/fn_createChute.sqf
+2||2||9||36||warning||Undefined Function: ra_fnc_addstaticlineactions||undefined function||/addons/ra_core/functions/fn_postInit.sqf
+37||37||25||39||warning||Undefined Function: ra_fnc_canjump||undefined function||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+155||155||32||50||warning||Undefined Function: ra_fnc_createchute||undefined function||/addons/ra_staticline/functions/fn_staticJump.sqf
+132||132||27||48||warning||Undefined Function: ra_fnc_equipmentcheck||undefined function||/addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+165||165||32||50||warning||Undefined Function: ra_fnc_hookcontrol||undefined function||/addons/ra_staticline/functions/fn_staticJump.sqf
+169||169||29||49||warning||Undefined Function: ra_fnc_stancecontrol||undefined function||/addons/ra_staticline/functions/fn_staticJump.sqf
+48||48||41||58||warning||Undefined Function: ra_fnc_staticjump||undefined function||/addons/ra_staticline/functions/fn_hookControl.sqf

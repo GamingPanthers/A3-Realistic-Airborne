@@ -1,83 +1,57 @@
 /*
     Function: RA_fnc_canJump
     Description: Returns true if the player is inside a valid aircraft at sufficient altitude.
-    
     Author: GamingPanthers
-    Version: 1.0.1
-    
-    Params:
-        _unit (Object): The unit (usually player)
-
-    Returns:
-        Boolean — true if in a valid aircraft at jump altitude
+    Version: 1.0.3
 */
 
 params ["_unit"];
-
-private _veh = vehicle _unit;
-diag_log format ["[RA] canJump check: Unit = %1, Vehicle = %2", name _unit, typeOf _veh];
+private _veh = objectParent _unit;
 
 // Not in a vehicle
-if (_veh isEqualTo _unit) exitWith {
-    diag_log "[RA] canJump -> false (not in vehicle)";
+if (isNull _veh) exitWith {
     false
 };
 
 // Check if valid aircraft
-private _validAircraft = [_veh] call RA_fnc_isValidAircraft;
-if (!_validAircraft) exitWith {
-    diag_log format ["[RA] canJump -> false (invalid aircraft: %1)", typeOf _veh];
+if (!([_veh] call RA_fnc_isValidAircraft)) exitWith {
     false
 };
 
-// Check altitude (use global variables with fallback)
+// Check altitude
 private _altitude = (getPosATL _veh) select 2;
 private _minAltitude = missionNamespace getVariable ["RA_MinAltitude", 100];
 private _maxAltitude = missionNamespace getVariable ["RA_MaxAltitude", 3000];
 
-if (_altitude < _minAltitude) exitWith {
-    diag_log format ["[RA] canJump -> false (altitude %1 < minimum %2)", round _altitude, _minAltitude];
-    false
-};
-
-if (_altitude > _maxAltitude) exitWith {
-    diag_log format ["[RA] canJump -> false (altitude %1 > maximum %2)", round _altitude, _maxAltitude];
+if (_altitude < _minAltitude || _altitude > _maxAltitude) exitWith {
     false
 };
 
 // Check if unit is passenger (not pilot/copilot/gunner)
 private _isPilot = (_unit == driver _veh) || (_unit == gunner _veh) || (_unit == commander _veh);
 if (_isPilot) exitWith {
-    diag_log "[RA] canJump -> false (unit is pilot/gunner/commander)";
     false
 };
 
-// Check if aircraft is moving (minimum speed for realistic jump)
+// Check if aircraft is moving (minimum 50 km/h)
 private _speed = speed _veh;
-private _minSpeed = 50; // 50 km/h minimum
-if (_speed < _minSpeed) exitWith {
-    diag_log format ["[RA] canJump -> false (speed %1 < minimum %2 km/h)", round _speed, _minSpeed];
+if (_speed < 50) exitWith {
     false
 };
 
-// Check if aircraft is in suitable orientation (not upside down, etc.)
+// Check orientation (pitch/roll < 45 degrees)
 private _pitch = ((vectorUp _veh) vectorCos (vectorUp _veh)) * 90;
 private _roll = ((vectorDir _veh) vectorCos (vectorDir _veh)) * 90;
 if (abs _pitch > 45 || abs _roll > 45) exitWith {
-    diag_log format ["[RA] canJump -> false (unsafe orientation: pitch %1, roll %2)", round _pitch, round _roll];
     false
 };
 
-// Check if doors are open (if applicable)
+// Check doors
 private _doorsOpen = true;
 if (_veh getVariable ["RA_RequireDoorsOpen", false]) then {
-    _doorsOpen = _veh animationPhase "door_R" > 0.5 || _veh animationPhase "door_L" > 0.5;
-    if (!_doorsOpen) exitWith {
-        diag_log "[RA] canJump -> false (doors not open)";
-        false
-    };
+    _doorsOpen = (_veh animationPhase "door_R" > 0.5) || (_veh animationPhase "door_L" > 0.5);
 };
 
-// All checks passed
-diag_log format ["[RA] canJump -> true (altitude: %1m, speed: %2 km/h)", round _altitude, round _speed];
+if (!_doorsOpen) exitWith { false };
+
 true
