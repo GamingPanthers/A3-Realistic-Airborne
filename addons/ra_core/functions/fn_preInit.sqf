@@ -43,11 +43,11 @@ RA_validAircraft = [
     "CUP_B_CH47F_GB",                  // CH-47F Chinook (BAF)
     "CUP_B_CH47F_USA",                 // CH-47F Chinook (USA)
     "CUP_I_CH47F_AAF",                 // CH-47F Chinook (AAF)
-    "CUP_B_UH1Y_MEV_USMC",            // UH-1Y Venom (MEDEVAC)
-    "CUP_B_UH1Y_UNA_USMC",            // UH-1Y Venom (Unarmed)
-    "CUP_B_MH60L_DAP_4x_US",          // MH-60L DAP
+    "CUP_B_UH1Y_MEV_USMC",             // UH-1Y Venom (MEDEVAC)
+    "CUP_B_UH1Y_UNA_USMC",             // UH-1Y Venom (Unarmed)
+    "CUP_B_MH60L_DAP_4x_US",           // MH-60L DAP
     "CUP_B_UH60M_US",                  // UH-60M Black Hawk
-    "CUP_B_UH60M_Unarmed_US",         // UH-60M Black Hawk (Unarmed)
+    "CUP_B_UH60M_Unarmed_US",          // UH-60M Black Hawk (Unarmed)
     
     // === RHS VEHICLES ===
     // CH-47 Chinook
@@ -58,9 +58,9 @@ RA_validAircraft = [
     "rhsusf_ch47f_light",              // CH-47F Light
     
     // CH-53 Super Stallion
-    "rhsusf_CH53E_USMC",              // CH-53E Super Stallion
-    "rhsusf_CH53E_USMC_GAU21",        // CH-53E Super Stallion (GAU-21)
-    "rhsusf_CH53E_USMC_rhs",          // CH-53E Super Stallion (RHS)
+    "rhsusf_CH53E_USMC",               // CH-53E Super Stallion
+    "rhsusf_CH53E_USMC_GAU21",         // CH-53E Super Stallion (GAU-21)
+    "rhsusf_CH53E_USMC_rhs",           // CH-53E Super Stallion (RHS)
     
     // UH-60 Black Hawk
     "RHS_UH60M",                       // UH-60M Black Hawk
@@ -72,20 +72,20 @@ RA_validAircraft = [
     
     // === 3CB BAF ===
     // Merlin
-    "UK3CB_BAF_Merlin_HC3_18",        // Merlin HC3 (18 Seats)
-    "UK3CB_BAF_Merlin_HC3_24",        // Merlin HC3 (24 Seats)
-    "UK3CB_BAF_Merlin_HC3_32",        // Merlin HC3 (32 Seats)
-    "UK3CB_BAF_Merlin_HC4_18",        // Merlin HC4 (18 Seats)
-    "UK3CB_BAF_Merlin_HC4_32",        // Merlin HC4 (32 Seats)
+    "UK3CB_BAF_Merlin_HC3_18",         // Merlin HC3 (18 Seats)
+    "UK3CB_BAF_Merlin_HC3_24",         // Merlin HC3 (24 Seats)
+    "UK3CB_BAF_Merlin_HC3_32",         // Merlin HC3 (32 Seats)
+    "UK3CB_BAF_Merlin_HC4_18",         // Merlin HC4 (18 Seats)
+    "UK3CB_BAF_Merlin_HC4_32",         // Merlin HC4 (32 Seats)
     
     // Chinook
-    "UK3CB_BAF_Chinook_HC1",          // Chinook HC1
-    "UK3CB_BAF_Chinook_HC2",          // Chinook HC2
-    "UK3CB_BAF_Chinook_HC6",          // Chinook HC6
+    "UK3CB_BAF_Chinook_HC1",           // Chinook HC1
+    "UK3CB_BAF_Chinook_HC2",           // Chinook HC2
+    "UK3CB_BAF_Chinook_HC6",           // Chinook HC6
     
     // Puma
-    "UK3CB_BAF_Puma_HC1",             // Puma HC1
-    "UK3CB_BAF_Puma_HC2",             // Puma HC2
+    "UK3CB_BAF_Puma_HC1",              // Puma HC1
+    "UK3CB_BAF_Puma_HC2",              // Puma HC2
     
     // === PROJECT OPFOR ===
     "LOP_TKA_Mi8MT",                   // Mi-8MT Hip
@@ -94,12 +94,12 @@ RA_validAircraft = [
     "LOP_ISTS_Mi8MT",                  // Mi-8MT Hip (ISTS)
     
     // === UNSUNG / VIETNAM ===
-    "vn_b_air_ch47_01_01",            // CH-47A Chinook
-    "vn_b_air_ch47_02_01",            // CH-47D Chinook
-    "vn_b_air_ch34_01_01",            // CH-34 Choctaw
-    "vn_b_air_uh1d_01_01",            // UH-1D Huey
-    "vn_b_air_uh1d_02_01",            // UH-1D Huey (Slick)
-    "vn_b_air_uh1d_03_06",            // UH-1D Huey (Transport)
+    "vn_b_air_ch47_01_01",             // CH-47A Chinook
+    "vn_b_air_ch47_02_01",             // CH-47D Chinook
+    "vn_b_air_ch34_01_01",             // CH-34 Choctaw
+    "vn_b_air_uh1d_01_01",             // UH-1D Huey
+    "vn_b_air_uh1d_02_01",             // UH-1D Huey (Slick)
+    "vn_b_air_uh1d_03_06",             // UH-1D Huey (Transport)
     
     // === GLOBAL MOBILIZATION ===
     "gm_gc_air_mi2p",                  // Mi-2P Hoplite

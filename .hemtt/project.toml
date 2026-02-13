@@ -1,0 +1,7 @@
+name = "Realistic Airborne"
+prefix = "ra_core"
+mainprefix = "z"
+author = "GamingPanthers"
+[version]
+path = "addons/ra_core/script_version.hpp"
+

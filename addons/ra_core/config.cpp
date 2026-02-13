@@ -1,11 +1,8 @@
-// Include HPP Files
-#include "config\CfgFunctions.hpp"
-#include "config\CfgVehicles.hpp"
-#include "config\CfgEventHandlers.hpp"
+#include "script_version.hpp"
 
 // Patches Config
 class CfgPatches {
-    class RA_Airborne {
+    class ra_core {
         name = "Realistic Airborne";
         author = "GamingPanthers";
         units[] = {};
@@ -33,5 +30,29 @@ class CfgPatches {
         version = "1.0.0";
         versionStr = "1.0.0";
         versionAr[] = {1,0,0};
+    };
+};
+
+class CfgFunctions {
+    class ra_core {
+        class core {
+            file = "addons\ra_core\functions";
+            class init {
+                preInit = 1;
+                postInit = 1;
+            };
+        };
+    };
+};
+
+class Extended_PreInit_EventHandlers {
+    class ra_core {
+        init = "call ra_fnc_preInit";
+    };
+};
+
+class Extended_PostInit_EventHandlers {
+    class ra_core {
+        init = "call ra_fnc_postInit";
     };
 };

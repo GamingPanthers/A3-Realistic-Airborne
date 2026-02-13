@@ -1,0 +1,100 @@
+2026-02-13T09:32:34.286283Z TRACE ThreadId(01) version: 1.18.2
+2026-02-13T09:32:34.286349Z TRACE ThreadId(01) platform: windows
+2026-02-13T09:32:34.286360Z TRACE ThreadId(01) args: [
+    "C:\\Users\\Andrew-PC\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BrettMayson.HEMTT_Microsoft.Winget.Source_8wekyb3d8bbwe\\hemtt.exe",
+    "check",
+]
+2026-02-13T09:32:34.286465Z TRACE ThreadId(02) (ThreadId(2)) park without timeout
+2026-02-13T09:32:34.286558Z TRACE ThreadId(03) (ThreadId(3)) start runtime::block_on
+2026-02-13T09:32:34.286632Z TRACE ThreadId(01) using temporary folder: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne"
+2026-02-13T09:32:34.286640Z TRACE ThreadId(01) using project folder: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne"
+2026-02-13T09:32:34.286660Z TRACE ThreadId(01) using out folder: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne\\.hemttout"
+2026-02-13T09:32:34.286716Z TRACE ThreadId(02) wait at most 30s
+2026-02-13T09:32:34.286731Z TRACE ThreadId(02) (ThreadId(2)) park timeout 29.9999992s
+2026-02-13T09:32:34.286793Z TRACE ThreadId(01) using build folder: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne\\.hemttout\\check"
+2026-02-13T09:32:34.286793Z TRACE ThreadId(03) checkout waiting for idle connection: ("https", api.github.com)
+2026-02-13T09:32:34.286817Z DEBUG ThreadId(03) starting new connection: https://api.github.com/
+2026-02-13T09:32:34.286834Z TRACE ThreadId(03) Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2026-02-13T09:32:34.287599Z TRACE ThreadId(01) Prefix: VfsPath { path: "/addons/ra_core/$PBOPREFIX$", fs: VFS { fs: OverlayFS { layers: [VfsPath { path: "", fs: VFS { fs: In Memory File System } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne\\hemtt_binarize_output" } } } } } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne" } } } } } }] } } }
+2026-02-13T09:32:34.287939Z TRACE ThreadId(01) config.cpp: VfsPath { path: "/addons/ra_core/config.cpp", fs: VFS { fs: OverlayFS { layers: [VfsPath { path: "", fs: VFS { fs: In Memory File System } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne\\hemtt_binarize_output" } } } } } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne" } } } } } }] } } }
+2026-02-13T09:32:34.288509Z TRACE ThreadId(01) Prefix: VfsPath { path: "/addons/ra_staticline/$PBOPREFIX$", fs: VFS { fs: OverlayFS { layers: [VfsPath { path: "", fs: VFS { fs: In Memory File System } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne\\hemtt_binarize_output" } } } } } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne" } } } } } }] } } }
+2026-02-13T09:32:34.288687Z TRACE ThreadId(01) config.cpp: VfsPath { path: "/addons/ra_staticline/config.cpp", fs: VFS { fs: OverlayFS { layers: [VfsPath { path: "", fs: VFS { fs: In Memory File System } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne\\hemtt_binarize_output" } } } } } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne" } } } } } }] } } }
+2026-02-13T09:32:34.289544Z TRACE ThreadId(01) checking for version macro in VfsPath { path: "/addons/ra_core/script_version.hpp", fs: VFS { fs: OverlayFS { layers: [VfsPath { path: "", fs: VFS { fs: In Memory File System } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "C:\\Users\\ANDREW~1\\AppData\\Local\\Temp\\hemtt\\2. Development_0. Github_Arma Projects_A3-Realistic-Airborne\\hemtt_binarize_output" } } } } } }, VfsPath { path: "", fs: VFS { fs: AltrootFS { root: VfsPath { path: "", fs: VFS { fs: PhysicalFS { root: "D:\\2. Development\\0. Github\\Arma Projects\\A3-Realistic-Airborne" } } } } } }] } } }
+2026-02-13T09:32:34.290608Z DEBUG ThreadId(03) connecting to 4.237.22.34:443
+2026-02-13T09:32:34.292765Z  INFO ThreadId(01) Config loaded for Realistic Airborne 1.0.4.3-6ea8ebb6
+2026-02-13T09:32:34.292800Z TRACE ThreadId(01) Scanning D:\2. Development\0. Github\Arma Projects\A3-Realistic-Airborne\addons for addons
+2026-02-13T09:32:34.294114Z DEBUG ThreadId(01) using global config directory: "C:\\Users\\Andrew-PC\\AppData\\Roaming\\hemtt"
+2026-02-13T09:32:34.294206Z  INFO ThreadId(01) Running checks
+2026-02-13T09:32:34.294218Z TRACE ThreadId(01) phase: init (BOM Check) (start)
+2026-02-13T09:32:34.294224Z TRACE ThreadId(01) phase: init (BOM Check) (done)
+2026-02-13T09:32:34.294226Z TRACE ThreadId(01) phase: init (Final New Line Check) (start)
+2026-02-13T09:32:34.294228Z TRACE ThreadId(01) phase: init (Final New Line Check) (done)
+2026-02-13T09:32:34.294230Z TRACE ThreadId(01) phase: init (git) (start)
+2026-02-13T09:32:34.294231Z TRACE ThreadId(01) phase: init (git) (done)
+2026-02-13T09:32:34.294233Z TRACE ThreadId(01) phase: init (Hooks) (start)
+2026-02-13T09:32:34.294250Z TRACE ThreadId(01) no hooks folder
+2026-02-13T09:32:34.294252Z TRACE ThreadId(01) phase: init (Hooks) (done)
+2026-02-13T09:32:34.294254Z TRACE ThreadId(01) phase: init (pboprefix) (start)
+2026-02-13T09:32:34.294256Z TRACE ThreadId(01) phase: init (pboprefix) (done)
+2026-02-13T09:32:34.294258Z TRACE ThreadId(01) phase: init (Binarize) (start)
+2026-02-13T09:32:34.294262Z TRACE ThreadId(01) phase: init (Binarize) (done)
+2026-02-13T09:32:34.294264Z TRACE ThreadId(01) phase: init (Rapifier) (start)
+2026-02-13T09:32:34.294265Z TRACE ThreadId(01) phase: init (Rapifier) (done)
+2026-02-13T09:32:34.294267Z TRACE ThreadId(01) phase: init (SQF) (start)
+2026-02-13T09:32:34.327879Z DEBUG ThreadId(03) connected to 4.237.22.34:443
+2026-02-13T09:32:34.439592Z TRACE ThreadId(03) http1 handshake complete, spawning background dispatcher task
+2026-02-13T09:32:34.439614Z TRACE ThreadId(03) waiting for connection to be ready
+2026-02-13T09:32:34.439670Z TRACE ThreadId(03) connection is ready
+2026-02-13T09:32:34.439679Z TRACE ThreadId(03) checkout dropped for ("https", api.github.com)
+2026-02-13T09:32:34.568186Z TRACE ThreadId(01) phase: init (SQF) (done)
+2026-02-13T09:32:34.568204Z TRACE ThreadId(01) phase: init (Stringtables) (start)
+2026-02-13T09:32:34.568206Z TRACE ThreadId(01) phase: init (Stringtables) (done)
+2026-02-13T09:32:34.568209Z TRACE ThreadId(01) phase: check (BOM Check) (start)
+2026-02-13T09:32:34.568944Z TRACE ThreadId(01) phase: check (BOM Check) (done)
+2026-02-13T09:32:34.568952Z TRACE ThreadId(01) phase: check (Final New Line Check) (start)
+2026-02-13T09:32:34.569531Z TRACE ThreadId(01) phase: check (Final New Line Check) (done)
+2026-02-13T09:32:34.569537Z TRACE ThreadId(01) phase: check (git) (start)
+2026-02-13T09:32:34.575113Z TRACE ThreadId(01) phase: check (git) (done)
+2026-02-13T09:32:34.575122Z TRACE ThreadId(01) phase: check (Hooks) (start)
+2026-02-13T09:32:34.575124Z TRACE ThreadId(01) phase: check (Hooks) (done)
+2026-02-13T09:32:34.575126Z TRACE ThreadId(01) phase: check (pboprefix) (start)
+2026-02-13T09:32:34.575128Z TRACE ThreadId(01) Checking prefixes against expected project path: z\ra_core\
+2026-02-13T09:32:34.575478Z TRACE ThreadId(01) phase: check (pboprefix) (done)
+2026-02-13T09:32:34.575488Z TRACE ThreadId(01) phase: check (Binarize) (start)
+2026-02-13T09:32:34.577981Z  INFO ThreadId(01) Validated 0 files for binarization
+2026-02-13T09:32:34.577996Z TRACE ThreadId(01) phase: check (Binarize) (done)
+2026-02-13T09:32:34.577999Z TRACE ThreadId(01) phase: check (Rapifier) (start)
+2026-02-13T09:32:34.578084Z TRACE ThreadId(01) phase: check (Rapifier) (done)
+2026-02-13T09:32:34.578092Z TRACE ThreadId(01) phase: check (SQF) (start)
+2026-02-13T09:32:34.578166Z TRACE ThreadId(01) phase: check (SQF) (done)
+2026-02-13T09:32:34.578177Z TRACE ThreadId(01) phase: check (Stringtables) (start)
+2026-02-13T09:32:34.578207Z TRACE ThreadId(01) phase: check (Stringtables) (done)
+2026-02-13T09:32:34.578210Z TRACE ThreadId(01) phase: pre_build (BOM Check) (start)
+2026-02-13T09:32:34.578212Z TRACE ThreadId(01) phase: pre_build (BOM Check) (done)
+2026-02-13T09:32:34.578214Z TRACE ThreadId(01) phase: pre_build (Final New Line Check) (start)
+2026-02-13T09:32:34.578216Z TRACE ThreadId(01) phase: pre_build (Final New Line Check) (done)
+2026-02-13T09:32:34.578218Z TRACE ThreadId(01) phase: pre_build (git) (start)
+2026-02-13T09:32:34.578219Z TRACE ThreadId(01) phase: pre_build (git) (done)
+2026-02-13T09:32:34.578221Z TRACE ThreadId(01) phase: pre_build (Hooks) (start)
+2026-02-13T09:32:34.578225Z TRACE ThreadId(01) phase: pre_build (Hooks) (done)
+2026-02-13T09:32:34.578227Z TRACE ThreadId(01) phase: pre_build (pboprefix) (start)
+2026-02-13T09:32:34.578229Z TRACE ThreadId(01) phase: pre_build (pboprefix) (done)
+2026-02-13T09:32:34.578231Z TRACE ThreadId(01) phase: pre_build (Binarize) (start)
+2026-02-13T09:32:34.578234Z TRACE ThreadId(01) phase: pre_build (Binarize) (done)
+2026-02-13T09:32:34.578235Z TRACE ThreadId(01) phase: pre_build (Rapifier) (start)
+2026-02-13T09:32:34.583127Z  INFO ThreadId(01) Rapified 2 addon configs
+2026-02-13T09:32:34.583157Z TRACE ThreadId(01) phase: pre_build (Rapifier) (done)
+2026-02-13T09:32:34.583161Z TRACE ThreadId(01) phase: pre_build (SQF) (start)
+2026-02-13T09:32:34.586305Z TRACE ThreadId(05) sqf compiling /addons/ra_core/functions/fn_preInit.sqf
+2026-02-13T09:32:34.586311Z TRACE ThreadId(07) sqf compiling /addons/ra_staticline/functions/fn_isValidAircraft.sqf
+2026-02-13T09:32:34.586321Z TRACE ThreadId(08) sqf compiling /addons/ra_core/functions/fn_postInit.sqf
+2026-02-13T09:32:34.586335Z TRACE ThreadId(15) sqf compiling /addons/ra_staticline/functions/fn_staticJump.sqf
+2026-02-13T09:32:34.586313Z TRACE ThreadId(06) sqf compiling /addons/ra_staticline/functions/fn_hookControl.sqf
+2026-02-13T09:32:34.586349Z TRACE ThreadId(10) sqf compiling /addons/ra_staticline/functions/fn_addStaticLineActions.sqf
+2026-02-13T09:32:34.586391Z TRACE ThreadId(11) sqf compiling /addons/ra_staticline/functions/fn_canJump.sqf
+2026-02-13T09:32:34.586322Z TRACE ThreadId(09) sqf compiling /addons/ra_staticline/functions/fn_stanceControl.sqf
+2026-02-13T09:32:34.586345Z TRACE ThreadId(12) sqf compiling /addons/ra_staticline/functions/fn_createChute.sqf
+2026-02-13T09:32:34.603423Z  INFO ThreadId(01) Compiled 9 sqf files
+2026-02-13T09:32:34.603475Z TRACE ThreadId(01) phase: pre_build (SQF) (failed)
+2026-02-13T09:32:34.610221Z TRACE ThreadId(01) writing ci annotations to .hemttout/ci_annotations.txt
+2026-02-13T09:32:34.610891Z TRACE ThreadId(01) wrote 9 ci annotations to .hemttout/ci_annotations.txt
