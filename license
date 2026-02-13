@@ -1,64 +1,18 @@
-GNU GENERAL PUBLIC LICENSE
-Version 3, 29 June 2007
+ARMA PUBLIC LICENSE SHARE ALIKE (APL-SA)
 
-Copyright (C) 2025 Gaming Panthers
+1. REUSE, ADAPTATION AND REDISTRIBUTION
+You are free to:
+- Retain: make, own, and control copies of the content.
+- Reuse: use the content in its original form.
+- Adapt: alter, transform, or build upon the content.
+- Redistribute: share copies of the content or adaptations with others.
 
-Everyone is permitted to copy and distribute verbatim copies
-of this license document, but changing it is not allowed.
+Under the following conditions:
+- Attribution: You must give appropriate credit to GamingPanthers as the original developer. 
+- Non-Commercial: You may not use this mod or its components for commercial purposes. 
+- Share Alike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license (APL-SA). 
 
----
+2. NO WARRANTY
+This content is provided "as is" without any warranty of any kind. The author is not responsible for any damage to your hardware, software, or sanity resulting from the use of this mod.
 
-### TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-
----
-
-## 🧾 Attribution
-
-**Original Concept & Mod Inspiration:**
-- *Valice Studios*  
-  Creators of the original ACE Static Line mod, which inspired this rewrite
-
-**Rewritten and Modernized by:**
-- *Gaming Panthers (2025)*  
-  Author and maintainer of Realistic Airborne
-
----
-
-## 🎓 Third-Party Dependencies & Credits
-
-This mod integrates with the following open-source Arma 3 frameworks:
-
-- **ACE3 (Advanced Combat Environment 3)**  
-  License: GNU General Public License v3.0  
-  Repository: https://github.com/acemod/ACE3
-
-- **CBA_A3 (Community Base Addons)**  
-  License: GNU General Public License v2.0  
-  Repository: https://github.com/CBATeam/CBA_A3
-
-These dependencies are **not redistributed** with this mod.  
-Users must obtain and install them separately.
-
-All trademarks, licenses, and content remain the property of their respective owners.
-
----
-
-## Author
-
-**Mod Name:** Realistic Airborne  
-**Maintainer:** Gaming Panthers  
-**License:** GNU GPLv3  
-**Year:** 2025
+Full license text: https://www.bohemia.net/community/licenses/arma-public-license-share-alike

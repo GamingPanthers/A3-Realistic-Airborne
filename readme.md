@@ -107,28 +107,28 @@ Realistic Airborne/
 
 ## 🗓️ Roadmap & Planned Features
 
-* [cite_start][ ] **AI Jumper Support:** Auto jump logic for AI units. [cite: 2]
-* [cite_start][ ] **Jumpmaster Authority:** Restrict hookup/jump commands to specific roles/leaders. [cite: 2]
-* [cite_start][ ] **Rear Ramp Detection:** Specific support for aircraft ramp-based exits. [cite: 2]
-* [cite_start][ ] **Advanced Animations:** Smoother transitions for jump preparation. [cite: 2]
-* [cite_start][ ] **HALO/HAHO:** Expansion module for high-altitude operations. [cite: 2]
-* [cite_start][ ] **Eden Editor Module:** Plug-and-play setup for mission makers. [cite: 2]
+* [ ] **AI Jumper Support:** Auto jump logic for AI units.
+* [ ] **Jumpmaster Authority:** Restrict hookup/jump commands to specific roles/leaders.
+* [ ] **Rear Ramp Detection:** Specific support for aircraft ramp-based exits.
+* [ ] **Advanced Animations:** Smoother transitions for jump preparation.
+* [ ] **HALO/HAHO:** Expansion module for high-altitude operations.
+* [ ] **Eden Editor Module:** Plug-and-play setup for mission makers.
 
 ---
 
 ## 📜 License
 
-[cite_start]This mod is released under the **Arma Public License Share Alike (APL-SA)**. [cite: 2]
-* [cite_start]You **may** modify or repack with proper credit. [cite: 2]
-* [cite_start]You **may not** sell this mod or its components. [cite: 2]
-* [cite_start]You **must** share any derivatives under the same license. [cite: 2]
+This mod is released under the **Arma Public License Share Alike (APL-SA)**.
+* You **may** modify or repack with proper credit.
+* You **may not** sell this mod or its components.
+* You **must** share any derivatives under the same license.
 
 ---
 
 ## 👤 Credits
 
-* [cite_start]**GamingPanthers** – Lead Developer [cite: 1, 2]
-* [cite_start]**ACE3 Team** – Interaction and parachute framework [cite: 2]
-* [cite_start]**ADFRC Team** – Compatibility support and vehicle integration [cite: 2]
-* [cite_start]**VS** – Original concept inspiration [cite: 2]
-* [cite_start]**Community Testers** – Feedback and bug reporting [cite: 2]
+* **GamingPanthers** – Lead Developer
+* **ACE3 Team** – Interaction and parachute framework
+* **ADFRC Team** – Compatibility support and vehicle integration
+* **VS** – Original concept inspiration
+* **Community Testers** – Feedback and bug reporting
